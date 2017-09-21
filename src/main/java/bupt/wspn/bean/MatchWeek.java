@@ -1,6 +1,9 @@
 package bupt.wspn.bean;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MatchWeek {
 	private String week_id;
@@ -22,6 +25,15 @@ public class MatchWeek {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return "WEEK:"+week_id+"  PLAYERS:"+player_pool;
+	}
+	
+	public static String getCurrentWeekId(){
+		SimpleDateFormat formater=new SimpleDateFormat("yyyyMMdd");
+		Calendar calendar = Calendar.getInstance();
+		calendar.setFirstDayOfWeek(Calendar.MONDAY);
+		calendar.set(Calendar.DAY_OF_WEEK,calendar.getFirstDayOfWeek());
+		Date date = new Date(calendar.getTime().getTime());
+		return formater.format(date);
 	}
 	
 }

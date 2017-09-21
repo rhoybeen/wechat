@@ -10,9 +10,9 @@ public class Match {
 	private String week_id;
 	private String match_id;
 	private int mem_id;
-	private int team;
-	private GAME_RESULT result;
-	private int point;
+	private int team = 0;
+	private GAME_RESULT result = GAME_RESULT.un;
+	private int point = 0;
 	
 	
 	public GAME_RESULT getResult() {

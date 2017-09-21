@@ -4,7 +4,6 @@
 <html lang="zh-CN">
 <head>
 	<style type="text/css">
-	div[id^="mode"] {display:none;}
 	input {height:25px;width:100px;}
 	</style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
@@ -75,7 +74,7 @@
 							昵称
 						</th>
 						<th>
-							积分
+							ID
 						</th>
 						<th>
 							操作
@@ -84,42 +83,27 @@
 				</thead>
 				<tbody id="table_player">
 				</tbody>
-						</table>
-			<div class="row">
-				<hr>
-				<form>
-				
-        		<div class="col-xs-4"><input placeholder="用户名" id="input_name" class="form-control"></input></div>
-       			<div class="col-xs-4"><input placeholder="积分" id="input_point" class="form-control"></input></div>
-				<div class="col-xs-4"><button class="btn" onclick="createPlayer()">创建用户</button></div>
-					
-				</form>
-			</div>
+			</table>
+
     </div>
-    <div class="span12" id="modeSignIn" >
-    		报名情况
-    </div>
-    <div class="span12" id="modeHistory" >
-    历史赛绩
-    </div>
+
 </div>
 		
 
 
 </div>
-
 <script>
 function test(){
 	$.ajax({
 		type:'GET',
-		url:"/wechat/db?action=query",
+		url:"/wechat/db?action=query&method=1",
 		success:function(obj){
-
+			console.log("get data from server")
 			var table = $("#table_player");
 			table.empty();
 			var tbody = "";
 			$.each(obj,function(index,item){
-				tbody = "<tr><td>"+(index+1)+"</td><td>"+item.name+item.id+"</td><td>"+item.point+"</td><td><small><a href=\"###\" onclick=\"del(" + item.id + ");return false\">删除</a> <a href=\"###\" onclick=\"alter(" + item.id + ");return false\">编辑</a></small></td></tr>";
+				tbody = "<tr><td>"+(index+1)+"</td><td>"+item.name+"</td><td>"+item.id+"</td><td><small><a href=\"###\" onclick=\"del(" + item.id + ");return false\">取消报名</a></small></td></tr>";
 				table.append(tbody);
 			});
 
@@ -129,14 +113,14 @@ function test(){
 
 
 function del(mem_id){
-	if(!confirm("确认要删除？")){ 
+	if(!confirm("确认要取消报名？")){ 
 		window.event.returnValue = false; 
 		}else{
 			$.ajax({
 				type:'POST',
-				url:"/wechat/db?action=del&mem_id="+mem_id,
+				url:"/wechat/db?action=del&method=1&mem_id="+mem_id,
 				success:function(data){
-					alert("删除成功");
+					alert("取消成功");
 					test();
 				}
 			});
@@ -144,7 +128,7 @@ function del(mem_id){
 }
 
 function alter(mem_id){
-	var point = prompt("修改积分","");
+/* 	var point = prompt("修改积分","");
 	if(point != null && point != ""){
 		if(!isNaN(point)){
 			$.ajax({
@@ -158,39 +142,20 @@ function alter(mem_id){
 		}else{
 			alert("请输入一个数字");
 		}
-	}
+	} */
+	alert("未开放");
 }
 
-function switch_mode(mode){
-	switch(mode){
-		case 1: 
-			$("#modePlayer").show();
-			$("#modeSignIn").hide();
-			$("#modeHistory").hide();
-			break;
-		case 2: 
-			$("#modePlayer").hide();
-			$("#modeSignIn").show();
-			$("#modeHistory").hide();
-			break;
-		case 3: 
-			$("#modePlayer").hide();
-			$("#modeSignIn").hide();
-			$("#modeHistory").show();
-			break;	}
-	
-}
+</script>
+<script>
+window.onload=function(){ 
+	test();
+	} 
 </script>
 
 <!--引入jquery脚本-->
 <script src="/wechat/js/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-	switch_mode(1);
-	test();
-});
 
-</script>
 <script src="/wechat/js/dropload.min.js"></script>
 <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
 <!--引入bootstrap脚本-->

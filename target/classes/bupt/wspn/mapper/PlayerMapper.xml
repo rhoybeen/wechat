@@ -22,6 +22,11 @@
 		select * from members order by mem_points desc
 	</select>
 	
+	<select id="findSignedPlayer" resultMap="BaseResultMap">
+		SELECT p.mem_id,m.mem_name from members as m right join player_log p on p.mem_id = m.mem_id where p.week_id = #{week_id}
+	</select>
+	
+	
 	<delete id="delete" parameterType="int">
 		delete from members where mem_id=#{id}
 	</delete>

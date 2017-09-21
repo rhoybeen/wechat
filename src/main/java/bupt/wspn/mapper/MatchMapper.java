@@ -19,13 +19,14 @@ public interface MatchMapper {
 	boolean signIn(Match match);
 	Match retrieveByPlayerLog(@Param(value="match_id") String match_id, @Param(value="mem_id") int mem_id);
 	List<Match> retrieveAllByWeek(String week_id);
+	List<Match> retrieveAllByWeekTrimed(String week_id);
 	List<Match> retrieveAllByPlayer(int mem_id);
 	List<Match> retrieveAllByTeam(@Param(value="match_id") String match_id, @Param(value="team") int team);
 	boolean updatePlayerLogPoint(Match match);
 	boolean updatePlayerLogTeam(Match match);
 	boolean updatePlayerLogResult(Match match);
 	boolean updatePlayerLog(Match match);
-	boolean deletePlayerLog(@Param(value="match_id") String match_id, @Param(value="mem_id") int mem_id);
+	boolean deletePlayerLog(@Param(value="week_id") String week_id, @Param(value="mem_id") int mem_id);
 	boolean deletePlayerLogByWeek(String week_id);
 	
 	boolean createMatchWeek(MatchWeek matchWeek);
