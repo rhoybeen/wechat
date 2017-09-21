@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bupt.wspn.mapper.MatchMapper">
+	<resultMap id="MatchResultMap" type="Match" >
+	    <result column="week_id" property="week_id" />
+	    <result column="mem_id" property="mem_id"/>
+	    <result column="team" property="team"/>
+	    <result column="result" property="result"/>
+	    <result column="point" property="point"/>
+  	</resultMap>
+
+	<resultMap id="MatchLogResultMap" type="MatchLog" >
+	    <result column="week_id" property="week_id" />
+	    <result column="match_id" property="match_id"/>
+	    <result column="player_list" property="player_list"/>
+	    <result column="winner_list" property="winner_list"/>
+	    <result column="winner_points" property="winner_points"/>
+	   	<result column="loser_points" property="loser_points"/>
+	    <result column="mvp_id" property="mvp"/>
+	    <result column="best_dps" property="best_dps"/>
+	    <result column="best_tank" property="best_tank"/>
+  	</resultMap>
+  	
+  	<resultMap id="RecordResultMap" type="Record" >
+	    <result column="mem_id" property="mem_id"/>
+	    <result column="week_id" property="week_id"/>
+	    <result column="match_id" property="match_id"/>
+	    <result column="match_status" property="match_status"/>
+	   	<result column="points" property="points"/>
+  	</resultMap>
+  	
+	<insert id="signIn" parameterType="Match">
+		insert into player_log(week_id,match_id,mem_id,team,result,point) values(#{week_id},#{mem_id},#{team},#{result},#{point})
+	</insert>
+	
+	<select id="retrieveByPlayerLog" resultType="Match">
+		select 
+		week_id as week_id,
+		match_id as match_id,
+		mem_id as mem_id,
+		team as team,
+		result as result,
+		point as point 
+		from player_log where mem_id=#{mem_id} and match_id=#{match_id}
+	</select>
+	
+	<select id="retrieveAllByWeek" resultMap="MatchResultMap">
+		select * from player_log where week_id=#{week_id}
+	</select>
+	
+	<select id="retrieveAllByPlayer" resultMap="MatchResultMap">
+		select * from player_log where mem_id=#{mem_id}
+	</select>
+	
+	<select id="retrieveAllByTeam" resultMap="MatchResultMap">
+		select * from player_log where team=#{team} and match_id=#{match_id}
+	</select>
+	
+	<update id="updatePlayerLogPoint" parameterType="Match">
+		update player_log set point=#{point} where mem_id=#{mem_id} and match_id=#{match_id}
+	</update>
+	
+	<update id="updatePlayerLogTeam" parameterType="Match">
+		update player_log set team=#{team} where mem_id=#{mem_id} and match_id=#{match_id}
+	</update>
+	
+	<update id="updatePlayerLogResult" parameterType="Match">
+		update player_log set result=#{result} where mem_id=#{mem_id} and match_id=#{match_id}
+	</update>
+	
+	<update id="updatePlayerLog" parameterType="Match">
+		update player_log set team=#{team},point=#{point},result=#{result} where mem_id=#{mem_id} and match_id=#{match_id}
+	</update>
+	
+	<delete id="deletePlayerLog" >
+		delete from player_log where mem_id=#{mem_id} and match_id=#{match_id}
+	</delete>
+	
+	<delete id="deletePlayerLogByWeek" >
+		delete from player_log where week_id=#{week_id}
+	</delete>
+	
+	<insert id="createMatchWeek" parameterType="MatchWeek">
+		insert into match_week(week_id,player_pool) values(#{week_id},#{player_pool})
+	</insert>
+
+	<select id="retrieveMatchWeek" resultType="MatchWeek">
+		select 
+		week_id as week_id,
+		player_pool as player_pool 
+		from match_week where week_id=#{week_id}
+	</select>
+
+	<delete id="deleteMatchWeek" parameterType="String">
+		delete from match_week where week_id=#{week_id}
+	</delete>
+	
+	<update id="updateMatchWeek" parameterType="MatchWeek">
+		update match_week set player_pool=#{player_pool} where week_id=#{week_id}
+	</update>
+	
+	<insert id="insertMatchLog" parameterType="MatchLog">
+		insert into match_log(week_id,match_id,player_list,winner_list,winner_points,loser_points,mvp_id,best_dps,best_tank)
+		values(#{week_id},#{match_id},#{player_list},#{winner_list},#{winner_points},#{loser_points},#{mvp},#{best_dps},#{best_tank})
+	</insert>
+	
+	<select id="retrieveLogByMatch" resultType="MatchLog">
+		select
+		week_id as week_id,
+		match_id as match_id,
+		player_list as player_list,
+		winner_list as winner_list,
+		winner_points as winner_points,
+		loser_points as loser_points,
+		mvp_id as mvp,
+		best_dps as best_dps,
+		best_tank as best_tank
+		from match_log where match_id=#{match_id}
+	</select>
+
+	<select id="retrieveLogByWeek" resultMap="MatchLogResultMap">
+		select * from match_log where week_id=#{week_id}
+	</select>
+	
+	<update id="updateMatchLog" parameterType="MatchLog">
+		update match_log set week_id=#{week_id},
+		player_list=#{player_list},
+		winner_list=#{winner_list},
+		winner_points=#{winner_points},
+		loser_points=#{loser_points},
+		mvp_id=#{mvp},
+		best_dps=#{best_dps},
+		best_tank=#{best_tank} where match_id=#{match_id}
+	</update>
+	
+	<delete id="deleteLogByMatch">
+		delete from match_log where match_id=#{match_id}
+	</delete>
+	
+	<delete id="deleteLogByWeek">
+		delete from match_log where week_id=#{week_id}
+	</delete>
+	
+	<insert id="insertRecord" parameterType="Record">
+		insert into records(mem_id,week_id,match_id,match_status,points)
+		values(#{mem_id},#{week_id},#{match_id},#{match_status},#{points})
+	</insert>
+	
+	<delete id="deleteRecordByWeek">
+		delete from records where week_id=#{week_id}
+	</delete>
+	
+	<delete id="deleteRecordByMatch">
+		delete from records where match_id=#{match_id}	
+	</delete>
+	
+	<select id="retrieveRecordByMember" resultMap="RecordResultMap">
+		select * from records where mem_id = #{mem_id}
+	</select>
+	
+	<select id="retrieveRecordByWeek" resultMap="RecordResultMap">
+		select * from records where week_id = #{week_id}
+	</select>
+	
+	<select id="retrieveRecordByMatch" resultMap="RecordResultMap">
+		select * from records where match_id = #{match_id}
+	</select>
+	
+	<select id="retrieveRecordByMemberMatch" resultType="Record">
+		select
+		mem_id as mem_id,
+		week_id as week_id,
+		match_id as match_id,
+		match_status as match_status,
+		points as points
+		 from records where match_id = #{match_id} and mem_id = #{mem_id}
+	</select>
+</mapper>

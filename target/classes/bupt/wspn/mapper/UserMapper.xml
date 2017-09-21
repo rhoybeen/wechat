@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bupt.wspn.mapper.UserMapper">
+	
+	<insert id="createUser" parameterType="User">
+		insert into user(id,openId,createTime) values(#{id},#{openid},#{createTime})
+	</insert>
+	
+	<insert id="newUser" parameterType="User">
+		insert into user(openId,createTime) values(#{openid},#{createTime})
+	</insert>
+	
+	<insert id="registerUserInfo" parameterType="User">
+		insert into user_info(id,openid,name,gender,school,phone,email,alipay,address) values(#{id},#{openid},#{username},#{gender},#{school},#{telephone},#{email},#{alipay},#{address})
+	</insert>
+	
+	<update id="updateUserInfo" parameterType="User">
+		update user_info set name=#{userName},gender=#{age},school=#{school},phone=#{telephone},email=#{email},alipay=#{alipay},address=#{address} where openid=#{openid}
+	</update>
+	
+	<select id="findByOpenId" parameterType="String" resultType="User">
+		select user_id id,user_name userName,user_age age from t_user where user_id=#{id}
+	</select>
+	
+	<update id="update" parameterType="User">
+		update t_user set user_name=#{userName},user_age=#{age} where user_id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from t_user where user_id=#{id}
+	</delete>
+	
+	 <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->  
+	<select id="findById" parameterType="int" resultType="User">
+		select user_id id,user_name userName,user_age age from t_user where user_id=#{id}
+	</select>
+	
+	<select id="findAll" resultType="User">
+		select user_id id,user_name userName,user_age age from t_user
+	</select>
+	
+</mapper>

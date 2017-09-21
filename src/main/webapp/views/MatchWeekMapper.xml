@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="bupt.wspn.mapper.MatchWeekMapper">
+	<resultMap id="BaseResultMap" type="Player" >
+	    <result column="mem_id" property="id" />
+	    <result column="mem_name" property="name"/>
+	    <result column="mem_points" property="point"/>
+  	</resultMap>
+	<insert id="create" parameterType="Player">
+		insert into members(mem_id,mem_name,mem_points) values(#{id},#{name},#{point})
+	</insert>
+	
+	<select id="retrieve" resultType="Player">
+		select 
+		mem_id as id,
+		mem_name as name,
+		mem_points as point
+		 from members where mem_id=#{id}
+	</select>
+	
+	<select id="findAll" resultMap="BaseResultMap">
+		select * from members order by mem_points desc
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete from members where mem_id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="Player">
+		update members set mem_name=#{name}, mem_points=#{point} where mem_id=#{id}
+	</update>
+
+</mapper>

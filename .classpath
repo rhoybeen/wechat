@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/mysql-connector-java-5.1.26-bin.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-aop-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-aspects-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-beans-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-context-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-context-support-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-core-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-expression-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-instrument-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-instrument-tomcat-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-jdbc-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-jms-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-messaging-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-orm-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-oxm-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-test-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-tx-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-web-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-webmvc-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-webmvc-portlet-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/spring-framework-4.3.7.RELEASE/libs/lib/spring-websocket-4.3.7.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/wx-tools-master/lib/wx-tools-2.1.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/tomcat/lib/servlet-api.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/mybatis-3.4.3/mybatis-3.4.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/mybatis-3.4.3/mybatis-spring-1.3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/jakarta-taglibs-standard-1.1.2/lib/jstl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/javaworkspace/jakarta-taglibs-standard-1.1.2/lib/standard.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
