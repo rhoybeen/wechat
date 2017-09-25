@@ -69,7 +69,7 @@
 				<thead>
 					<tr>
 						<th>
-							序号
+							玩家id
 						</th>
 						<th>
 							昵称

@@ -30,7 +30,7 @@
   	</resultMap>
   	
 	<insert id="signIn" parameterType="Match">
-		insert into player_log(week_id,match_id,mem_id,team,result,point) values(#{week_id},#{match_id},#{mem_id},#{team},#{result},#{point})
+		insert into player_log(week_id,match_id,mem_id,team,result,point) values(#{week_id},#{mem_id},#{team},#{result},#{point})
 	</insert>
 	
 	<select id="retrieveByPlayerLog" resultType="Match">
@@ -46,10 +46,6 @@
 	
 	<select id="retrieveAllByWeek" resultMap="MatchResultMap">
 		select * from player_log where week_id=#{week_id}
-	</select>
-	
-	<select id="retrieveAllByWeekTrimed" resultMap="MatchResultMap">
-		select * from player_log where week_id=#{week_id} group by mem_id
 	</select>
 	
 	<select id="retrieveAllByPlayer" resultMap="MatchResultMap">
@@ -77,7 +73,7 @@
 	</update>
 	
 	<delete id="deletePlayerLog" >
-		delete from player_log where mem_id=#{mem_id} and week_id=#{week_id}
+		delete from player_log where mem_id=#{mem_id} and match_id=#{match_id}
 	</delete>
 	
 	<delete id="deletePlayerLogByWeek" >

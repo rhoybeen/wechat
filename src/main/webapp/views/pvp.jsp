@@ -89,7 +89,7 @@
     </div>
     <div class="row">
         <div class="col-xs-4"><button class="btn btn-embossed btn-success" onclick="javascript:window.location.href='/wechat/signIn'">报名参赛</button></div>
-        <div class="col-xs-4"><button class="btn btn-embossed btn-info" onclick="location='/wechat/match'">本周赛事</button></div>
+        <div class="col-xs-4"><button class="btn btn-embossed btn-info" onclick="location='/wechat/dbt'">本周赛事</button></div>
          <div class="col-xs-4"><button class="btn btn-embossed btn-primary" onclick="location='/wechat/views/admin.jsp'">系统管理</button></div> 
     </div>
     
